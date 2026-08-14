@@ -7081,6 +7081,18 @@
                         </div>
                     </div>
 
+                    <!-- 异常提醒横幅 -->
+                    <div class="alert-banner" style="background: linear-gradient(90deg, rgba(239,68,68,0.15), rgba(239,68,68,0.05)); border: 1px solid rgba(239,68,68,0.3); border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(239,68,68,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="color: #F87171; font-weight: 500; margin-bottom: 2px;">今日检测到 <strong style="font-size: 16px;">3</strong> 条异常日报待核实</div>
+                            <div style="color: var(--text-tertiary); font-size: 12px;">异常类型：工时超标 2 条 · 产量异常 1 条 · 已自动置顶标红</div>
+                        </div>
+                        <button class="btn btn-danger btn-sm">立即处理</button>
+                    </div>
+
                     <div class="filter-bar">
                         <div class="filter-row">
                             <div class="filter-item">
@@ -7131,15 +7143,15 @@
                             <thead>
                                 <tr>
                                     <th style="width: 40px;"><input type="checkbox"></th>
-                                    <th>序号</th>
+                                    <th style="width: 50px;">序号</th>
                                     <th>出勤日期</th>
                                     <th>产品编号</th>
-                                    <th>团队任务</th>
+                                    <th>团队/任务</th>
                                     <th>班组长</th>
-                                    <th>审批状态</th>
                                     <th>出勤类型</th>
+                                    <th>结算依据</th>
                                     <th class="col-center">异常</th>
-                                    <th class="col-center">结算依据</th>
+                                    <th>审批状态</th>
                                     <th class="col-num">完成数量</th>
                                     <th class="col-num">完成产值</th>
                                     <th class="col-num">人力成本</th>
@@ -7148,203 +7160,227 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                                                <tr style="background: rgba(239, 68, 68, 0.06);">
-                                    <td><input type="checkbox" class="checkbox"></td>
-                                    <td>01</td>
-                                    <td>2026-08-13</td>
-                                    <td>XR-LW-008</td>
-                                    <td>鑫瑞八班 · 叶片检修</td>
-                                    <td>陈工（乙方）</td>
-                                    <td><span class="tag tag-danger">异常待核</span></td>
-                                    <td class="col-center"><span class="status-dot danger"></span></td>
-                                    <td class="col-center"><span class="tag tag-info">计时</span></td>
-                                    <td><span class="tag tag-warning">加班</span></td>
-                                    <td class="col-center"><span class="status-dot warning"></span></td>
-                                    <td class="col-center"><span class="tag tag-info">计时</span></td>
-                                    <td class="col-center"><span class="status-dot danger pulse" title="工时超历史均值35%"></span></td>
-                                    <td class="col-center"><span class="tag tag-danger">计件</span></td>
-                                    <td class="col-num" style="color: var(--danger);">超35%</td>
-                                    <td class="col-num amount" style="color: var(--danger-light);">¥45,000</td>
-                                    <td class="col-num amount">¥28,000</td>
-                                    <td class="col-num amount" style="color: var(--warning-light);">¥17,000</td>
-                                    <td style="width: 160px;">
-                                        <a href="javascript:void(0)" class="link">详情</a>
-                                        <a href="javascript:void(0)" class="link link-danger">异常处理</a>
-                                    </td>
-                                </tr>
+                                <!-- 异常行1 -->
                                 <tr style="background: rgba(239, 68, 68, 0.06);">
                                     <td><input type="checkbox" class="checkbox"></td>
                                     <td>01</td>
                                     <td>2026-08-13</td>
-                                    <td>XR-LW-008</td>
+                                    <td style="color: var(--primary-light);">XR-LW-008</td>
                                     <td>鑫瑞八班 · 叶片检修</td>
                                     <td>陈工（乙方）</td>
-                                    <td><span class="tag tag-danger">异常待核</span></td>
                                     <td><span class="tag tag-warning">加班</span></td>
+                                    <td><span class="tag tag-danger">计件</span></td>
                                     <td class="col-center"><span class="status-dot danger pulse" title="工时超历史均值35%"></span></td>
-                                    <td class="col-center"><span class="tag tag-danger">计件</span></td>
+                                    <td><span class="tag tag-danger">异常待核</span></td>
                                     <td class="col-num" style="color: var(--danger);">超35%</td>
                                     <td class="col-num amount" style="color: var(--danger-light);">¥45,000</td>
                                     <td class="col-num amount">¥28,000</td>
                                     <td class="col-num amount" style="color: var(--warning-light);">¥17,000</td>
-                                    <td style="width: 160px;">
+                                    <td>
                                         <a href="javascript:void(0)" class="link">详情</a>
                                         <a href="javascript:void(0)" class="link link-danger">异常处理</a>
                                     </td>
                                 </tr>
-<tr>
+                                <!-- 异常行2 -->
+                                <tr style="background: rgba(239, 68, 68, 0.06);">
+                                    <td><input type="checkbox" class="checkbox"></td>
+                                    <td>02</td>
+                                    <td>2026-08-13</td>
+                                    <td style="color: var(--primary-light);">DS-012</td>
+                                    <td>大盛三班 · 齿轮箱换油</td>
+                                    <td>刘班长（乙方）</td>
+                                    <td><span class="tag tag-info">正常出勤</span></td>
+                                    <td><span class="tag tag-info">计时</span></td>
+                                    <td class="col-center"><span class="status-dot danger pulse" title="产量超历史均值42%"></span></td>
+                                    <td><span class="tag tag-danger">异常待核</span></td>
+                                    <td class="col-num" style="color: var(--danger);">超42%</td>
+                                    <td class="col-num amount" style="color: var(--danger-light);">¥32,500</td>
+                                    <td class="col-num amount">¥18,200</td>
+                                    <td class="col-num amount" style="color: var(--success-light);">¥14,300</td>
+                                    <td>
+                                        <a href="javascript:void(0)" class="link">详情</a>
+                                        <a href="javascript:void(0)" class="link link-danger">异常处理</a>
+                                    </td>
+                                </tr>
+                                <!-- 正常行 -->
+                                <tr>
                                     <td><input type="checkbox"></td>
-                                    <td>1</td>
+                                    <td>3</td>
                                     <td>2026-07-18</td>
                                     <td style="color: var(--primary-light);">7-1#2410F</td>
                                     <td>RW202607001</td>
                                     <td>杜生海</td>
-                                    <td><span class="tag tag-success">已通过</span></td>
-                                    <td class="col-center"><span class="status-dot success"></span></td>
-                                    <td class="col-center"><span class="tag tag-info">计时</span></td>
-                                    <td class="col-center"><span class="status-dot success"></span></td>
-                                    <td class="col-center"><span class="tag tag-info">计时</span></td>
                                     <td><span class="tag tag-info">正常出勤</span></td>
-                                    <td>0.5</td>
-                                    <td class="amount primary">¥6,000</td>
-                                    <td class="amount warning">¥2,400</td>
-                                    <td class="amount success">¥3,600</td>
-                                    <td>
-                                        <span class="action-link">详情</span>
-                                        <span class="action-link">审核记录</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td>2</td>
-                                    <td>2026-07-18</td>
-                                    <td style="color: var(--primary-light);">7-1#2410F</td>
-                                    <td>RW202607002</td>
-                                    <td>杜生海</td>
+                                    <td><span class="tag tag-info">计时</span></td>
+                                    <td class="col-center"><span class="status-dot success"></span></td>
                                     <td><span class="tag tag-success">已通过</span></td>
-                                    <td class="col-center"><span class="status-dot success"></span></td>
-                                    <td class="col-center"><span class="tag tag-info">计时</span></td>
-                                    <td class="col-center"><span class="status-dot success"></span></td>
-                                    <td class="col-center"><span class="tag tag-info">计时</span></td>
-                                    <td><span class="tag tag-warning">加班</span></td>
-                                    <td class="col-center"><span class="status-dot warning"></span></td>
-                                    <td class="col-center"><span class="tag tag-info">计时</span></td>
-                                    <td class="col-center"><span class="status-dot warning" title="加班需确认"></span></td>
-                                    <td class="col-center"><span class="tag tag-info">计时</span></td>
-                                    <td>0.5</td>
-                                    <td class="amount primary">¥6,000</td>
-                                    <td class="amount warning">¥3,600</td>
-                                    <td class="amount success">¥2,400</td>
+                                    <td class="col-num">0.5</td>
+                                    <td class="col-num amount">¥6,000</td>
+                                    <td class="col-num amount" style="color: var(--warning-light);">¥2,400</td>
+                                    <td class="col-num amount" style="color: var(--success-light);">¥3,600</td>
                                     <td>
-                                        <span class="action-link">详情</span>
-                                        <span class="action-link">审核记录</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td>3</td>
-                                    <td>2026-07-17</td>
-                                    <td style="color: var(--primary-light);">7-1#2409F</td>
-                                    <td>RW202607003</td>
-                                    <td>张班长（鑫瑞）</td>
-                                    <td><span class="tag tag-warning">待审核</span></td>
-                                    <td class="col-center"><span class="status-dot warning"></span></td>
-                                    <td class="col-center"><span class="tag tag-info">计时</span></td>
-                                    <td class="col-center"><span class="status-dot success"></span></td>
-                                    <td class="col-center"><span class="tag tag-info">计时</span></td>
-                                    <td><span class="tag tag-info">正常出勤</span></td>
-                                    <td>0.4</td>
-                                    <td class="amount primary">¥4,800</td>
-                                    <td class="amount warning">-</td>
-                                    <td class="amount">-</td>
-                                    <td>
-                                        <span class="action-link">详情</span>
-                                        <span class="action-link" style="color: var(--success);">通过</span>
-                                        <span class="action-link danger">驳回</span>
+                                        <a href="javascript:void(0)" class="link">详情</a>
+                                        <a href="javascript:void(0)" class="link">审核记录</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><input type="checkbox"></td>
                                     <td>4</td>
-                                    <td>2026-07-16</td>
-                                    <td style="color: var(--primary-light);">7-1#2408F</td>
-                                    <td>RW20260716001</td>
-                                    <td>周明辉</td>
+                                    <td>2026-07-18</td>
+                                    <td style="color: var(--primary-light);">7-1#2410F</td>
+                                    <td>RW202607002</td>
+                                    <td>杜生海</td>
+                                    <td><span class="tag tag-warning">加班</span></td>
+                                    <td><span class="tag tag-info">计时</span></td>
+                                    <td class="col-center"><span class="status-dot warning" title="加班需确认"></span></td>
                                     <td><span class="tag tag-success">已通过</span></td>
-                                    <td class="col-center"><span class="status-dot success"></span></td>
-                                    <td class="col-center"><span class="tag tag-info">计时</span></td>
-                                    <td class="col-center"><span class="status-dot success"></span></td>
-                                    <td class="col-center"><span class="tag tag-info">计时</span></td>
-                                    <td><span class="tag tag-info">正常出勤</span></td>
-                                    <td>1.0</td>
-                                    <td class="amount primary">¥12,000</td>
-                                    <td class="amount warning">¥2,800</td>
-                                    <td class="amount success">¥9,200</td>
+                                    <td class="col-num">0.5</td>
+                                    <td class="col-num amount">¥6,000</td>
+                                    <td class="col-num amount" style="color: var(--warning-light);">¥3,600</td>
+                                    <td class="col-num amount" style="color: var(--success-light);">¥2,400</td>
                                     <td>
-                                        <span class="action-link">详情</span>
-                                        <span class="action-link">审核记录</span>
+                                        <a href="javascript:void(0)" class="link">详情</a>
+                                        <a href="javascript:void(0)" class="link">审核记录</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><input type="checkbox"></td>
                                     <td>5</td>
-                                    <td>2026-07-15</td>
-                                    <td style="color: var(--primary-light);">7-1#2407F</td>
-                                    <td>RW20260715001</td>
+                                    <td>2026-07-17</td>
+                                    <td style="color: var(--primary-light);">7-1#2409F</td>
+                                    <td>RW202607003</td>
                                     <td>张班长（鑫瑞）</td>
-                                    <td><span class="tag tag-success">已通过</span></td>
-                                    <td class="col-center"><span class="status-dot success"></span></td>
-                                    <td class="col-center"><span class="tag tag-info">计时</span></td>
-                                    <td class="col-center"><span class="status-dot success"></span></td>
-                                    <td class="col-center"><span class="tag tag-info">计时</span></td>
                                     <td><span class="tag tag-info">正常出勤</span></td>
-                                    <td>1.0</td>
-                                    <td class="amount primary">¥12,000</td>
-                                    <td class="amount warning">-</td>
-                                    <td class="amount">-</td>
+                                    <td><span class="tag tag-info">计时</span></td>
+                                    <td class="col-center"><span class="status-dot success"></span></td>
+                                    <td><span class="tag tag-warning">待审核</span></td>
+                                    <td class="col-num">0.4</td>
+                                    <td class="col-num amount">¥4,800</td>
+                                    <td class="col-num amount">-</td>
+                                    <td class="col-num amount">-</td>
                                     <td>
-                                        <span class="action-link">详情</span>
-                                        <span class="action-link">审核记录</span>
+                                        <a href="javascript:void(0)" class="link">详情</a>
+                                        <a href="javascript:void(0)" class="link" style="color: var(--success);">通过</a>
+                                        <a href="javascript:void(0)" class="link link-danger">驳回</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><input type="checkbox"></td>
                                     <td>6</td>
-                                    <td>2026-07-14</td>
-                                    <td style="color: var(--primary-light);">Y-1#B03</td>
-                                    <td>RW20260714002</td>
-                                    <td>陈工（华翼）</td>
-                                    <td><span class="tag tag-danger">已驳回</span></td>
-                                    <td class="col-center"><span class="status-dot danger"></span></td>
-                                    <td class="col-center"><span class="tag tag-info">计时</span></td>
-                                    <td class="col-center"><span class="status-dot success"></span></td>
-                                    <td class="col-center"><span class="tag tag-info">计时</span></td>
+                                    <td>2026-07-16</td>
+                                    <td style="color: var(--primary-light);">7-1#2408F</td>
+                                    <td>RW20260716001</td>
+                                    <td>周明辉</td>
                                     <td><span class="tag tag-info">正常出勤</span></td>
-                                    <td>1.5</td>
-                                    <td class="amount primary">¥-</td>
-                                    <td class="amount warning">-</td>
-                                    <td class="amount">-</td>
+                                    <td><span class="tag tag-danger">计件</span></td>
+                                    <td class="col-center"><span class="status-dot success"></span></td>
+                                    <td><span class="tag tag-success">已通过</span></td>
+                                    <td class="col-num">1.0</td>
+                                    <td class="col-num amount">¥12,000</td>
+                                    <td class="col-num amount" style="color: var(--warning-light);">¥5,200</td>
+                                    <td class="col-num amount" style="color: var(--success-light);">¥6,800</td>
                                     <td>
-                                        <span class="action-link">详情</span>
-                                        <span class="action-link">驳回原因</span>
+                                        <a href="javascript:void(0)" class="link">详情</a>
+                                        <a href="javascript:void(0)" class="link">审核记录</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>7</td>
+                                    <td>2026-07-15</td>
+                                    <td style="color: var(--primary-light);">7-1#2407F</td>
+                                    <td>RW20260715001</td>
+                                    <td>杜生海</td>
+                                    <td><span class="tag tag-info">正常出勤</span></td>
+                                    <td><span class="tag tag-info">计时</span></td>
+                                    <td class="col-center"><span class="status-dot success"></span></td>
+                                    <td><span class="tag tag-success">已通过</span></td>
+                                    <td class="col-num">0.6</td>
+                                    <td class="col-num amount">¥7,200</td>
+                                    <td class="col-num amount" style="color: var(--warning-light);">¥2,800</td>
+                                    <td class="col-num amount" style="color: var(--success-light);">¥4,400</td>
+                                    <td>
+                                        <a href="javascript:void(0)" class="link">详情</a>
+                                        <a href="javascript:void(0)" class="link">审核记录</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>8</td>
+                                    <td>2026-07-14</td>
+                                    <td style="color: var(--primary-light);">7-1#2406F</td>
+                                    <td>RW20260714002</td>
+                                    <td>周明辉</td>
+                                    <td><span class="tag tag-default">请假</span></td>
+                                    <td><span class="tag tag-default">-</span></td>
+                                    <td class="col-center"><span class="status-dot"></span></td>
+                                    <td><span class="tag tag-success">已通过</span></td>
+                                    <td class="col-num">0</td>
+                                    <td class="col-num amount">¥0</td>
+                                    <td class="col-num amount">¥0</td>
+                                    <td class="col-num amount">¥0</td>
+                                    <td>
+                                        <a href="javascript:void(0)" class="link">详情</a>
+                                        <a href="javascript:void(0)" class="link">审核记录</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>9</td>
+                                    <td>2026-07-13</td>
+                                    <td style="color: var(--primary-light);">7-1#2405F</td>
+                                    <td>RW20260713001</td>
+                                    <td>张班长（鑫瑞）</td>
+                                    <td><span class="tag tag-info">正常出勤</span></td>
+                                    <td><span class="tag tag-danger">计件</span></td>
+                                    <td class="col-center"><span class="status-dot success"></span></td>
+                                    <td><span class="tag tag-warning">待审核</span></td>
+                                    <td class="col-num">0.8</td>
+                                    <td class="col-num amount">¥9,600</td>
+                                    <td class="col-num amount">-</td>
+                                    <td class="col-num amount">-</td>
+                                    <td>
+                                        <a href="javascript:void(0)" class="link">详情</a>
+                                        <a href="javascript:void(0)" class="link" style="color: var(--success);">通过</a>
+                                        <a href="javascript:void(0)" class="link link-danger">驳回</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>10</td>
+                                    <td>2026-07-12</td>
+                                    <td style="color: var(--primary-light);">7-1#2404F</td>
+                                    <td>RW20260712001</td>
+                                    <td>杜生海</td>
+                                    <td><span class="tag tag-warning">加班</span></td>
+                                    <td><span class="tag tag-info">计时</span></td>
+                                    <td class="col-center"><span class="status-dot warning" title="加班需确认"></span></td>
+                                    <td><span class="tag tag-success">已通过</span></td>
+                                    <td class="col-num">0.3</td>
+                                    <td class="col-num amount">¥3,600</td>
+                                    <td class="col-num amount" style="color: var(--warning-light);">¥2,160</td>
+                                    <td class="col-num amount" style="color: var(--success-light);">¥1,440</td>
+                                    <td>
+                                        <a href="javascript:void(0)" class="link">详情</a>
+                                        <a href="javascript:void(0)" class="link">审核记录</a>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="table-footer">
-                            <span>显示第 1-6 条，共 86 条 · 待审核 12 条</span>
-                            <div class="pagination">
-                                <button class="page-btn">上一页</button>
-                                <button class="page-btn active">1</button>
-                                <button class="page-btn">2</button>
-                                <button class="page-btn">3</button>
-                                <button class="page-btn">下一页</button>
-                            </div>
+                    </div>
+
+                    <div class="pagination">
+                        <div class="pagination-info">共 128 条数据，当前第 1/13 页</div>
+                        <div class="pagination-btns">
+                            <button class="page-btn">上一页</button>
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <button class="page-btn">下一页</button>
                         </div>
                     </div>
                 </div>
 
-            
             <!-- ========== 应收结算单列表 ========== -->
             <div class="page" id="page-settlement-receivable-list">
                 <div class="page-header">
